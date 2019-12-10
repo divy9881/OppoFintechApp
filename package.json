@@ -1,0 +1,30 @@
+{
+  "name": "oppofintechapp",
+  "version": "1.0.0",
+  "description": "Google assistant integrated application for ease in filling the forms.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DivyPatel9881/OppoFintechApp.git"
+  },
+  "keywords": [
+    "Google_assistant",
+    "Oppo_fintech"
+  ],
+  "author": "DIVY PATEL <divy9881@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/DivyPatel9881/OppoFintechApp/issues"
+  },
+  "homepage": "https://github.com/DivyPatel9881/OppoFintechApp#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.1"
+  }
+}
