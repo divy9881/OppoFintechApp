@@ -26,12 +26,13 @@ app.post("/", function(req, res){
             webhookResponse.queryResult.parameters["Address"].forEach(function(place){
                 address += place+","
             })
-            formInputs["Address"] = address.slice(0,address.length()-1)
+            formInputs["Address"] = address.slice(0,address.length-1)
             return res.json({
                 fulfillmentText:"Okay " + formInputs["Address"] + " it is, \n Address?"
             })
         case "Phone_Number":
             formInputs["Phone_Number"] = webhookResponse.queryResult.parameters["Phone_Number"][0]
+            console.log(formInputs)
             return res.json({
                 fulfillmentText:"Okay " + formInputs["Number"] + " it is, \nform ended, and all the inputs are recorded."
             })
