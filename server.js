@@ -11,7 +11,7 @@ app.get("/", function(req, res){
 })
 
 app.post("/", function(req, res){
-    console.log("Body is " + req.body )
+    console.log("Body is " + JSON.stringify(req.body) )
 })
 
 let server = app.listen(process.env.PORT, function(){
