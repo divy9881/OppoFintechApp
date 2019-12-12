@@ -4,6 +4,7 @@ let bodyParser = require("body-parser")
 let app = express()
 
 app.use(bodyParser.urlencoded({extended:true}))
+app.use(bodyParser.json())
 
 app.get("/", function(req, res){
     console.log("GET request accepted.")
