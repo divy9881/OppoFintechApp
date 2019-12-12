@@ -14,8 +14,8 @@ app.get("/", function(req, res){
 app.post("/", function(req, res){
     console.log(req.body.parameters)
     return res.json({
-        speech:"I got " + req.body.parameters.Name[0],
-        displayText : "I got " + req.body.parameters.Name[0],
+        speech:"I got " + req.body.parameters,
+        displayText : "I got " + req.body.parameters,
         source: "Name info"
     })
 })
