@@ -14,10 +14,13 @@ app.get("/", function(req, res){
 app.post("/", function(req, res){
     console.log(req.body.parameters)
     return res.json({
-        speech:"I got " + req.body.parameters,
-        displayText : "I got " + req.body.parameters,
-        source: "Name info"
+        fulfillmentText: "Hiii!"
     })
+    // return res.json({
+    //     speech:"I got " + req.body.parameters,
+    //     displayText : "I got " + req.body.parameters,
+    //     source: "Name info"
+    // })
 })
 
 let server = app.listen(process.env.PORT, function(){
