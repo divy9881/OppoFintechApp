@@ -12,7 +12,12 @@ app.get("/", function(req, res){
 })
 
 app.post("/", function(req, res){
-    console.log(req.body)
+    console.log(req.body.parameters.Name[0])
+    return res.json({
+        speech:"I got " + req.body.parameters.Name[0],
+        displayText : "I got " + req.body.parameters.Name[0],
+        source: "Name info"
+    })
 })
 
 let server = app.listen(process.env.PORT, function(){
