@@ -7,22 +7,37 @@ app.use(bodyParser.urlencoded({extended:true}))
 app.use(bodyParser.json())
 
 app.get("/", function(req, res){
-    console.log("GET request accepted.")
     res.send("Oppo fintech app running ....")
 })
 
+let formInputs = {}
+
 app.post("/", function(req, res){
-    console.log(req.body.parameters)
-    return res.json({
-        fulfillmentText: "Hiii!"
-    })
-    // return res.json({
-    //     speech:"I got " + req.body.parameters,
-    //     displayText : "I got " + req.body.parameters,
-    //     source: "Name info"
-    // })
+    webhookResponse = req.body
+    let action = webhookResponse.queryResult.action
+    switch(action){
+        case "Name":
+            formInputs["Name"] = webhookResponse.queryResult.parameters["Name"][0]
+            return res.json({
+                fulfillmentText:"Okay " + formInputs["Name"] + " it is, \n Address?"
+            })
+        case "Address":
+            let address = ""
+            webhookResponse.queryResult.parameters["Address"].forEach(function(place){
+                address += place+","
+            })
+            formInputs["Address"] = address.slice(0,address.length()-1)
+            return res.json({
+                fulfillmentText:"Okay " + formInputs["Address"] + " it is, \n Address?"
+            })
+        case "Phone_Number":
+            formInputs["Phone_Number"] = webhookResponse.queryResult.parameters["Phone_Number"][0]
+            return res.json({
+                fulfillmentText:"Okay " + formInputs["Number"] + " it is, \nform ended, and all the inputs are recorded."
+            })
+    }
 })
 
 let server = app.listen(process.env.PORT, function(){
-    console.log("Server listening at " + server.address().address + " and on " + server.address().port)
+    console.log("Server listening on " + server.address().port)
 })
