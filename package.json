@@ -24,6 +24,7 @@
   "homepage": "https://github.com/DivyPatel9881/OppoFintechApp#readme",
   "dependencies": {
     "body-parser": "^1.19.0",
+    "dialogflow-fulfillment": "^0.6.1",
     "express": "^4.17.1"
   },
   "devDependencies": {
