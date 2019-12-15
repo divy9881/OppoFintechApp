@@ -17,6 +17,5 @@ async function initiateFetchInterval(interval){
             document.getElementById("Phone_Number").value = fields["Phone_Number"]
             clearInterval(set_var)
         }
-        console.log("hello")
     }, interval)
 }

@@ -1,0 +1,55 @@
+{
+  "id": "107b9b62-2834-45b3-b34d-545f91a8e926",
+  "parentId": "3af5439a-54d4-4808-847c-1d39982791c6",
+  "rootParentId": "47663512-6512-4c2f-9f6c-2370c1f85385",
+  "name": "Phone Number",
+  "auto": true,
+  "contexts": [
+    "Formfill-custom-custom-followup"
+  ],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "Phone_Number",
+      "affectedContexts": [],
+      "parameters": [
+        {
+          "id": "4322f01d-6c22-4b7c-a6ae-6ff64cc21c65",
+          "required": true,
+          "dataType": "@sys.phone-number",
+          "name": "Phone_Number",
+          "value": "$Phone_Number",
+          "prompts": [
+            {
+              "lang": "en",
+              "value": "Please say the phone number"
+            }
+          ],
+          "promptMessages": [],
+          "noMatchPromptMessages": [],
+          "noInputPromptMessages": [],
+          "outputDialogContexts": [],
+          "isList": false
+        }
+      ],
+      "messages": [
+        {
+          "type": 0,
+          "lang": "en",
+          "condition": "",
+          "speech": []
+        }
+      ],
+      "defaultResponsePlatforms": {},
+      "speech": []
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": true,
+  "webhookForSlotFilling": true,
+  "fallbackIntent": false,
+  "events": [],
+  "conditionalResponses": [],
+  "condition": "",
+  "conditionalFollowupEvents": []
+}

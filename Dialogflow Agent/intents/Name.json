@@ -1,0 +1,61 @@
+{
+  "id": "d30bbe56-93bf-49f7-87f8-4ca3a65e14ff",
+  "parentId": "47663512-6512-4c2f-9f6c-2370c1f85385",
+  "rootParentId": "47663512-6512-4c2f-9f6c-2370c1f85385",
+  "name": "Name",
+  "auto": true,
+  "contexts": [
+    "Formfill-followup"
+  ],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "Name",
+      "affectedContexts": [
+        {
+          "name": "Formfill-custom-followup",
+          "parameters": {},
+          "lifespan": 10
+        }
+      ],
+      "parameters": [
+        {
+          "id": "6177340e-36ec-4da8-a97d-5f34a9e90998",
+          "required": true,
+          "dataType": "@sys.person",
+          "name": "Name",
+          "value": "$Name",
+          "prompts": [
+            {
+              "lang": "en",
+              "value": "Please say the name"
+            }
+          ],
+          "promptMessages": [],
+          "noMatchPromptMessages": [],
+          "noInputPromptMessages": [],
+          "outputDialogContexts": [],
+          "isList": false
+        }
+      ],
+      "messages": [
+        {
+          "type": 0,
+          "lang": "en",
+          "condition": "",
+          "speech": []
+        }
+      ],
+      "defaultResponsePlatforms": {},
+      "speech": []
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": true,
+  "webhookForSlotFilling": true,
+  "fallbackIntent": false,
+  "events": [],
+  "conditionalResponses": [],
+  "condition": "",
+  "conditionalFollowupEvents": []
+}
