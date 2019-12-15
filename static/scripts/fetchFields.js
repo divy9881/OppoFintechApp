@@ -1,6 +1,6 @@
-let nameField = document.getElementById("Name")
-let addressField = document.getElementById("Address")
-let phone_NumberField = document.getElementById("Phone_Number")
+// let nameField = document.getElementById("Name")
+// let addressField = document.getElementById("Address")
+// let phone_NumberField = document.getElementById("Phone_Number")
 
 
 async function fetchFieldsAndUpdate(){
@@ -15,15 +15,15 @@ async function initiateFetchInterval(interval){
         if(fields["Name"]){
             console.log(fields["Name"])
             console.log(fields["Name"])
-            nameField.value = fields["Name"]
+            document.getElementById("Name").value = fields["Name"]
         }
         if(fields["Address"]){
             console.log(fields["Address"])
-            addressField.value = fields["Address"]
+            document.getElementById("Address").value = fields["Address"]
         }
         if(fields["Phone_Number"]){
             console.log(fields["Phone_Number"])
-            phone_NumberField.value = fields["Phone_Number"]
+            document.getElementById("Address").value = fields["Phone_Number"]
         }
     }, interval)
 }
