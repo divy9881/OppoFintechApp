@@ -12,8 +12,14 @@ async function fetchFieldsAndUpdate(){
 async function initiateFetchInterval(interval){
     setInterval(async function(){
         let fields = await fetchFieldsAndUpdate()
-        nameField.value = fields["Name"]
-        addressField.value = fields["Address"]
-        phone_NumberField.value = fields["Phone_Number"]
+        if(fields["Name"]){
+            nameField.value = fields["Name"]
+        }
+        if(fields["Address"]){
+            addressField.value = fields["Address"]
+        }
+        if(fields["Phone_Number"]){
+            phone_NumberField.value = fields["Phone_Number"]
+        }
     }, interval)
 }
