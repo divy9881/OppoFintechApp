@@ -12,9 +12,13 @@ app.get("/", function(req, res){
     res.sendFile(__dirname + "/static/views/form.html")
 })
 
+app.get("/submitted", function(req, res){
+    res.sendFile(__dirname + "/static/views/submitMessage.html")
+})
+
 app.post("/", function(req, res){
     console.log(req.body)
-    res.send("Form submitted")
+    res.redirect("/submitted")
 })
 
 let formInputs = {}

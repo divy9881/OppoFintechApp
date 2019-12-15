@@ -5,7 +5,7 @@ async function fetchFieldsAndUpdate(){
 }
 
 async function initiateFetchInterval(interval){
-    setInterval(async function(){
+    let set_var = setInterval(async function(){
         let fields = await fetchFieldsAndUpdate()
         if(fields["Name"]){
             document.getElementById("Name").value = fields["Name"]
@@ -15,6 +15,8 @@ async function initiateFetchInterval(interval){
         }
         if(fields["Phone_Number"]){
             document.getElementById("Phone_Number").value = fields["Phone_Number"]
+            clearInterval(set_var)
         }
+        console.log("hello")
     }, interval)
 }
