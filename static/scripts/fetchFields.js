@@ -14,6 +14,7 @@ async function initiateFetchInterval(interval){
         let fields = await fetchFieldsAndUpdate()
         if(fields["Name"]){
             console.log(fields["Name"])
+            console.log(fields["Name"])
             nameField.value = fields["Name"]
         }
         if(fields["Address"]){
