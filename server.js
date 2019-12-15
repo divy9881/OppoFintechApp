@@ -9,7 +9,7 @@ app.use(bodyParser.json())
 app.use(express.static(__dirname+"/static"))
 
 app.get("/", function(req, res){
-    res.sendFile("./views/form.html")
+    res.sendFile(__dirname + "/static/views/form.html")
 })
 
 app.post("/", function(req, res){
