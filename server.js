@@ -50,6 +50,10 @@ app.post("/intents", function(req, res){
     }
 })
 
+app.get("*", function(req, res){
+    res.send("Sorry invalid request")
+})
+
 let server = app.listen(process.env.PORT, function(){
     console.log("Server listening on " + server.address().port)
 })
