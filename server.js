@@ -6,13 +6,20 @@ let app = express()
 app.use(bodyParser.urlencoded({extended:true}))
 app.use(bodyParser.json())
 
+app.use(express.static(__dirname+"/static"))
+
 app.get("/", function(req, res){
-    res.send("Oppo fintech app running ....")
+    res.sendFile("./views/form.html")
+})
+
+app.post("/", function(req, res){
+    console.log(req.body)
+    res.send("Form submitted")
 })
 
 let formInputs = {}
 
-app.post("/", function(req, res){
+app.post("/intents", function(req, res){
     webhookResponse = req.body
     let action = webhookResponse.queryResult.action
     switch(action){

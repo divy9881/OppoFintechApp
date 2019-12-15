@@ -1,0 +1,25 @@
+*{
+    font-family: 'Montserrat', sans-serif;
+}
+
+.form-heading{
+    text-align:center;
+    font-size:2em;
+}
+
+.container-fluid{
+    margin-top:10px;
+}
+
+.GA-btn{
+    margin-top:25px;
+}
+
+.sub-btn{
+    padding-left:20px;
+    padding-right:20px;
+}
+
+.btn-div{
+    text-align:center;
+}
