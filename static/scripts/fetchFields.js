@@ -1,4 +1,4 @@
-git async function fetchFieldsAndUpdate(){
+async function fetchFieldsAndUpdate(){
     let response = await fetch("https://oppofintech.herokuapp.com/fields")
     fields = response.json()
     return fields
