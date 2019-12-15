@@ -19,6 +19,10 @@ app.post("/", function(req, res){
 
 let formInputs = {}
 
+app.get("/fields", function(req, res){
+    res.json(formInputs)
+})
+
 app.post("/intents", function(req, res){
     webhookResponse = req.body
     let action = webhookResponse.queryResult.action

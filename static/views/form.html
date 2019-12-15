@@ -13,6 +13,7 @@
         <link href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,700,700i&display=swap" rel="stylesheet">
 
         <link rel="stylesheet" href="../styles/form.css">
+        <script src="../scripts/fetchFields.js"></script>
 
     </head>
     <body>
@@ -26,7 +27,7 @@
                 </div>
 
                 <div>
-                    <button type="button" class="GA-btn btn btn-lg btn-primary">ENABLE FILLING WITH ASSISTANT</button>
+                    <button type="button" onclick="initiateFetchInterval(3000)" class="GA-btn btn btn-lg btn-primary">ENABLE FILLING WITH ASSISTANT</button>
                 </div>
 
             </div>
@@ -50,8 +51,8 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="Phone_number"></label>
-                            <input type="text" class="form-control" id="Phone_number" placeholder="Phone Number" name="Phone_number">
+                            <label for="Phone_Number"></label>
+                            <input type="text" class="form-control" id="Phone_Number" placeholder="Phone Number" name="Phone_Number">
                         </div>
 
                         <div class="form-group">
