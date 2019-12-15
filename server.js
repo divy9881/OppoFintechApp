@@ -17,7 +17,7 @@ app.post("/", function(req, res){
     let action = webhookResponse.queryResult.action
     switch(action){
         case "Name":
-            formInputs["Name"] = webhookResponse.queryResult.parameters["Name"]
+            formInputs["Name"] = webhookResponse.queryResult.parameters["Name"].name
             return res.json({
                 fulfillmentText:"Okay " + formInputs["Name"] + " it is, \n Address?"
             })
