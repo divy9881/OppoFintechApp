@@ -13,12 +13,15 @@ async function initiateFetchInterval(interval){
     setInterval(async function(){
         let fields = await fetchFieldsAndUpdate()
         if(fields["Name"]){
+            console.log(fields["Name"])
             nameField.value = fields["Name"]
         }
         if(fields["Address"]){
+            console.log(fields["Address"])
             addressField.value = fields["Address"]
         }
         if(fields["Phone_Number"]){
+            console.log(fields["Phone_Number"])
             phone_NumberField.value = fields["Phone_Number"]
         }
     }, interval)
