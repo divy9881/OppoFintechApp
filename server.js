@@ -56,7 +56,7 @@ app.post("/intents", function (req, res) {
 
 app.get("/fields/:key", function (req, res) {
     let key = req.params.key
-    if(formInput[key]){
+    if(formInputs[key]){
         res.json(formInputs[key])
     }
     res.json({})
