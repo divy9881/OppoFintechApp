@@ -29,7 +29,9 @@ app.get("/fields", function (req, res) {
 
 app.post("/intents", function (req, res) {
     webhookResponse = req.body
+    console.log(webhookResponse)
     let action = webhookResponse.queryResult.action
+    console.log(action)
     let len
     let key
     switch (action) {
