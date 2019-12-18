@@ -39,7 +39,6 @@ app.post("/intents", function (req, res) {
             webhookResponse.queryResult.parameters["Address"].forEach(function (place) {
                 address += place + ","
             })
-            formInputs[key] = {}
             formInputs[key]["Address"] = address.slice(0, address.length - 1)
             return res.json({
                 fulfillmentText: "Okay " + formInputs[key]["Address"] + " it is, \n Phone Number?"
@@ -47,7 +46,6 @@ app.post("/intents", function (req, res) {
         case "Phone_Number":
             len = webhookResponse.queryResult.outputContexts.length
             key = webhookResponse.queryResult.outputContexts[len-2]["parameters"]["Key"]
-            formInputs[key] = {}
             formInputs[key]["Phone_Number"] = webhookResponse.queryResult.parameters["Phone_Number"]
             console.log(formInputs)
             return res.json({
