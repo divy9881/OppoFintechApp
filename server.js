@@ -18,18 +18,6 @@ app.get("/submitted", function (req, res) {
 
 let formInputs = {}
 
-app.post("/:key", function (req, res) {
-    console.log(req.body)
-    let key = req.params.key
-    delete formInputs[key]
-    res.redirect("/submitted")
-})
-
-app.get("/fields/:key", function (req, res) {
-    let key = req.params.key
-    res.json(formInputs[key])
-})
-
 app.post("/intents", function (req, res) {
     webhookResponse = req.body
     let action = webhookResponse.queryResult.action
@@ -66,6 +54,18 @@ app.post("/intents", function (req, res) {
                 fulfillmentText: "Okay " + formInputs[key]["Phone_Number"] + " it is, \nform ended, and all the inputs are recorded."
             })
     }
+})
+
+app.get("/fields/:key", function (req, res) {
+    let key = req.params.key
+    res.json(formInputs[key])
+})
+
+app.post("/:key", function (req, res) {
+    console.log(req.body)
+    let key = req.params.key
+    delete formInputs[key]
+    res.redirect("/submitted")
 })
 
 app.get("*", function (req, res) {
