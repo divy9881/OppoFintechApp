@@ -38,7 +38,7 @@ app.post("/intents", function (req, res) {
             return res.json({
                 fulfillmentText: "Okay " + formInputs[key]["Name"] + " it is, \n Address?"
             })
-        case "Address1":
+        case "Address":
             let length = webhookResponse.queryResult.outputContexts.length
             let key = webhookResponse.queryResult.outputContexts[length-1]["Key"]
             let address = ""
@@ -49,7 +49,7 @@ app.post("/intents", function (req, res) {
             return res.json({
                 fulfillmentText: "Okay " + formInputs[key]["Address"] + " it is, \n Phone Number?"
             })
-        case "Phone_Number1":
+        case "Phone_Number":
             let length = webhookResponse.queryResult.outputContexts.length
             let key = webhookResponse.queryResult.outputContexts[length-1]["Key"]
             formInputs[key]["Phone_Number"] = webhookResponse.queryResult.parameters["Phone_Number"]
