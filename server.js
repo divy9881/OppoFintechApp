@@ -47,7 +47,6 @@ app.post("/intents", function (req, res) {
             len = webhookResponse.queryResult.outputContexts.length
             key = webhookResponse.queryResult.outputContexts[len-2]["parameters"]["Key"]
             formInputs[key]["Phone_Number"] = webhookResponse.queryResult.parameters["Phone_Number"]
-            console.log(formInputs)
             return res.json({
                 fulfillmentText: "Okay " + formInputs[key]["Phone_Number"] + " it is, form ended, and all the inputs are recorded."
             })
@@ -58,8 +57,10 @@ app.get("/fields/:key", function (req, res) {
     let key = req.params.key
     if(formInputs[key]){
         res.json(formInputs[key])
+    } 
+    else {
+        res.json({})
     }
-    res.json({})
 })
 
 app.post("/:key", function (req, res) {
