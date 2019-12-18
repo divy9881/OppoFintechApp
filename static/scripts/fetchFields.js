@@ -1,12 +1,13 @@
-async function fetchFieldsAndUpdate(){
-    let response = await fetch("https://oppofintech.herokuapp.com/fields")
+async function fetchFieldsAndUpdate(key){
+    let response = await fetch("https://oppofintech.herokuapp.com/fields"+"/key")
     fields = response.json()
+    console.log(fields)
     return fields
 }
 
-async function initiateFetchInterval(interval){
+async function initiateFetchInterval(interval, key){
     let set_var = setInterval(async function(){
-        let fields = await fetchFieldsAndUpdate()
+        let fields = await fetchFieldsAndUpdate(key)
         if(fields["Name"]){
             document.getElementById("Name").value = fields["Name"]
         }

@@ -16,31 +16,29 @@ app.get("/submitted", function (req, res) {
     res.sendFile(__dirname + "/static/views/submitMessage.html")
 })
 
-app.post("/", function (req, res) {
+let formInputs = {}
+
+app.post("/:key", function (req, res) {
     console.log(req.body)
+    let key = req.params.key
+    delete formInputs[key]
     res.redirect("/submitted")
 })
 
-let formInputs = {}
-
-app.get("/fields", function (req, res) {
-    res.json(formInputs)
+app.get("/fields/:key", function (req, res) {
+    let key = req.params.key
+    res.json(formInputs[key])
 })
 
 app.post("/intents", function (req, res) {
     webhookResponse = req.body
-    // console.log(webhookResponse)
     let action = webhookResponse.queryResult.action
-    // console.log(action)
     let len
     let key
     switch (action) {
         case "Name":
             len = webhookResponse.queryResult.outputContexts.length
-            // console.log(len)
-            console.log(webhookResponse.queryResult.outputContexts)
             key = webhookResponse.queryResult.outputContexts[len-2]["parameters"]["Key"]
-            console.log(key)
             formInputs[key] = {}
             formInputs[key]["Name"] = webhookResponse.queryResult.parameters["Name"].name
             return res.json({
@@ -63,6 +61,7 @@ app.post("/intents", function (req, res) {
             key = webhookResponse.queryResult.outputContexts[len-2]["parameters"]["Key"]
             formInputs[key] = {}
             formInputs[key]["Phone_Number"] = webhookResponse.queryResult.parameters["Phone_Number"]
+            console.log(formInputs)
             return res.json({
                 fulfillmentText: "Okay " + formInputs[key]["Phone_Number"] + " it is, \nform ended, and all the inputs are recorded."
             })
