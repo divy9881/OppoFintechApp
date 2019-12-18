@@ -8,7 +8,7 @@ var filesToCache = [
   '/vendors/bootstrap-theme.min.css',
   '/vendors/bootstrap.min.css',
   '/vendors/bootstrap.min.js',
-  '/vendors.min.js',
+  '/vendors/jquery.min.js',
 ];
 
 /* Start the service worker and cache all of the app's content */
