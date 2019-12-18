@@ -38,7 +38,7 @@ app.post("/intents", function (req, res) {
         case "Name":
             len = webhookResponse.queryResult.outputContexts.length
             // console.log(len)
-            console.log(webhookResponse.queryResult.outputContexts[len-1]["parameters"])
+            console.log(webhookResponse.queryResult.outputContexts)
             key = webhookResponse.queryResult.outputContexts[len-1]["parameters"]["Key"]
             console.log(key)
             formInputs[key]["Name"] = webhookResponse.queryResult.parameters["Name"].name
