@@ -30,20 +30,22 @@ app.get("/fields", function (req, res) {
 app.post("/intents", function (req, res) {
     webhookResponse = req.body
     let action = webhookResponse.queryResult.action
+    let len
+    let key
     switch (action) {
         case "Name":
-            let len = webhookResponse.queryResult.outputContexts.length
+            len = webhookResponse.queryResult.outputContexts.length
             console.log(len)
             console.log(webhookResponse.queryResult.outputContexts[len-1]["parameters"])
-            let key = webhookResponse.queryResult.outputContexts[len-1]["parameters"]["Key"]
+            key = webhookResponse.queryResult.outputContexts[len-1]["parameters"]["Key"]
             console.log(key)
             formInputs[key]["Name"] = webhookResponse.queryResult.parameters["Name"].name
             return res.json({
                 fulfillmentText: "Okay " + formInputs[key]["Name"] + " it is, \n Address?"
             })
         case "Address":
-            let len = webhookResponse.queryResult.outputContexts.length
-            let key = webhookResponse.queryResult.outputContexts[len-1]["parameters"]["Key"]
+            len = webhookResponse.queryResult.outputContexts.length
+            key = webhookResponse.queryResult.outputContexts[len-1]["parameters"]["Key"]
             let address = ""
             webhookResponse.queryResult.parameters["Address"].forEach(function (place) {
                 address += place + ","
@@ -53,8 +55,8 @@ app.post("/intents", function (req, res) {
                 fulfillmentText: "Okay " + formInputs[key]["Address"] + " it is, \n Phone Number?"
             })
         case "Phone_Number":
-            let len = webhookResponse.queryResult.outputContexts.length
-            let key = webhookResponse.queryResult.outputContexts[len-1]["parameters"]["Key"]
+            len = webhookResponse.queryResult.outputContexts.length
+            key = webhookResponse.queryResult.outputContexts[len-1]["parameters"]["Key"]
             formInputs[key]["Phone_Number"] = webhookResponse.queryResult.parameters["Phone_Number"]
             return res.json({
                 fulfillmentText: "Okay " + formInputs[key]["Phone_Number"] + " it is, \nform ended, and all the inputs are recorded."
