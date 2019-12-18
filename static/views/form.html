@@ -1,78 +1,97 @@
 <!DOCTYPE html>
 <html lang="en-US">
-    <head>
 
-        <meta charset="UTF-8">
-        <title> Oppo Fintech App</title>
+<head>
 
-        <link rel="stylesheet" href="../vendors/bootstrap.min.css">
-        <link rel="stylesheet" href="../vendors/bootstrap-theme.min.css">
-        <script src="../vendors/jquery.min.js"></script>
-        <script src="../vendors/bootstrap.min.js"></script>
+    <meta charset="UTF-8">
+    <title> Oppo Fintech App</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,700,700i&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../vendors/bootstrap.min.css">
+    <link rel="stylesheet" href="../vendors/bootstrap-theme.min.css">
+    <script src="../vendors/jquery.min.js"></script>
+    <script src="../vendors/bootstrap.min.js"></script>
+    <link rel="manifest" href="../manifest.json">
+    <meta name="theme-color" content="white" />
 
-        <link rel="stylesheet" href="../styles/form.css">
-        <script src="../scripts/fetchFields.js"></script>
 
-    </head>
-    <body>
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="icons/icon152.png">
+    <meta name="theme-color" content="white" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Fintech App">
+    <meta name="msapplication-TileImage" content="icons/icon144.png">
+    <meta name="msapplication-TileColor" content="#FFFFFF">
 
-        <div class="container-fluid">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,700,700i&display=swap" rel="stylesheet">
 
-            <div class="jumbotron form-heading">
+    <link rel="stylesheet" href="../styles/form.css">
+    <script src="../scripts/fetchFields.js"></script>
 
-                <div>    
-                    <strong>Demo form for Form Filler application with Google Assistant</strong>
-                </div>
+</head>
 
-                <div>
-                    <button type="button" onclick="initiateFetchInterval(5000)" class="GA-btn btn btn-lg btn-primary">ENABLE FILLING WITH ASSISTANT</button>
-                </div>
+<body>
 
+    <div class="container-fluid">
+
+        <div class="jumbotron form-heading">
+
+            <div>
+                <strong>Demo form for Form Filler application with Google Assistant</strong>
             </div>
 
-
-        </div>
-
-        <div class='container'>
-
-            <div class="row">
-
-                <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3"></div>
-
-                <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
-
-                    <form method="POST" action="/" >
-                        
-                        <div class="form-group">
-                            <label for="Name"></label>
-                            <input type="text" class="form-control" id="Name" placeholder="Name" name="Name">
-                        </div>
-
-                        <div class="form-group">
-                            <label for="Phone_Number"></label>
-                            <input type="text" class="form-control" id="Phone_Number" placeholder="Phone Number" name="Phone_Number">
-                        </div>
-
-                        <div class="form-group">
-                            <label for="Address"></label>
-                            <textarea class="form-control" id="Address" placeholder="Address" rows="3" name="Address"></textarea>
-                        </div>
-
-                        <div class="btn-div">
-                            <button type="submit" class="sub-btn btn btn-lg btn-success">SUBMIT</button>
-                        </div>
-
-                    </form >
-
-                </div>
-
-                <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3"></div>
-
+            <div>
+                <button type="button" onclick="initiateFetchInterval(5000)" class="GA-btn btn btn-lg btn-primary">ENABLE
+                    FILLING WITH ASSISTANT</button>
             </div>
 
         </div>
 
-    </body>
+
+    </div>
+
+    <div class='container'>
+
+        <div class="row">
+
+            <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3"></div>
+
+            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+
+                <form method="POST" action="/">
+
+                    <div class="form-group">
+                        <label for="Name"></label>
+                        <input type="text" class="form-control" id="Name" placeholder="Name" name="Name">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="Phone_Number"></label>
+                        <input type="text" class="form-control" id="Phone_Number" placeholder="Phone Number"
+                            name="Phone_Number">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="Address"></label>
+                        <textarea class="form-control" id="Address" placeholder="Address" rows="3"
+                            name="Address"></textarea>
+                    </div>
+
+                    <div class="btn-div">
+                        <button type="submit" class="sub-btn btn btn-lg btn-success">SUBMIT</button>
+                    </div>
+
+                </form>
+
+            </div>
+
+            <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3"></div>
+
+        </div>
+
+    </div>
+    <script src="scripts/main.js"></script>
+</body>
+
 </html>
