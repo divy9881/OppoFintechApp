@@ -29,15 +29,15 @@ app.get("/fields", function (req, res) {
 
 app.post("/intents", function (req, res) {
     webhookResponse = req.body
-    console.log(webhookResponse)
+    // console.log(webhookResponse)
     let action = webhookResponse.queryResult.action
-    console.log(action)
+    // console.log(action)
     let len
     let key
     switch (action) {
         case "Name":
             len = webhookResponse.queryResult.outputContexts.length
-            console.log(len)
+            // console.log(len)
             console.log(webhookResponse.queryResult.outputContexts[len-1]["parameters"])
             key = webhookResponse.queryResult.outputContexts[len-1]["parameters"]["Key"]
             console.log(key)
