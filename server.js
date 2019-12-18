@@ -32,24 +32,29 @@ app.post("/intents", function (req, res) {
     let action = webhookResponse.queryResult.action
     switch (action) {
         case "Name":
-            formInputs["Name"] = webhookResponse.queryResult.parameters["Name"].name
+            let length = webhookResponse.queryResult.outputContexts.length
+            let key = webhookResponse.queryResult.outputContexts[length-1]["Key"]
+            formInputs[key]["Name"] = webhookResponse.queryResult.parameters["Name"].name
             return res.json({
-                fulfillmentText: "Okay " + formInputs["Name"] + " it is, \n Address?"
+                fulfillmentText: "Okay " + formInputs[key]["Name"] + " it is, \n Address?"
             })
-        case "Address":
+        case "Address1":
+            let length = webhookResponse.queryResult.outputContexts.length
+            let key = webhookResponse.queryResult.outputContexts[length-1]["Key"]
             let address = ""
             webhookResponse.queryResult.parameters["Address"].forEach(function (place) {
                 address += place + ","
             })
-            formInputs["Address"] = address.slice(0, address.length - 1)
+            formInputs[key]["Address"] = address.slice(0, address.length - 1)
             return res.json({
-                fulfillmentText: "Okay " + formInputs["Address"] + " it is, \n Phone Number?"
+                fulfillmentText: "Okay " + formInputs[key]["Address"] + " it is, \n Phone Number?"
             })
-        case "Phone_Number":
-            formInputs["Phone_Number"] = webhookResponse.queryResult.parameters["Phone_Number"]
-            console.log(formInputs)
+        case "Phone_Number1":
+            let length = webhookResponse.queryResult.outputContexts.length
+            let key = webhookResponse.queryResult.outputContexts[length-1]["Key"]
+            formInputs[key]["Phone_Number"] = webhookResponse.queryResult.parameters["Phone_Number"]
             return res.json({
-                fulfillmentText: "Okay " + formInputs["Phone_Number"] + " it is, \nform ended, and all the inputs are recorded."
+                fulfillmentText: "Okay " + formInputs[key]["Phone_Number"] + " it is, \nform ended, and all the inputs are recorded."
             })
     }
 })
