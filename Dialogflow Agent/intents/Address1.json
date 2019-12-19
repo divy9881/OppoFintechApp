@@ -1,41 +1,41 @@
 {
-  "id": "5e501b95-579f-4ada-8f2a-45af0130f142",
-  "parentId": "0ce144b6-9ccb-4ea8-9ee2-5cab424752f7",
+  "id": "cd212d91-aac8-45ec-a015-6706a020677b",
+  "parentId": "5e501b95-579f-4ada-8f2a-45af0130f142",
   "rootParentId": "47663512-6512-4c2f-9f6c-2370c1f85385",
-  "name": "Name",
+  "name": "Address1",
   "auto": true,
   "contexts": [
-    "Key-followup"
+    "Name-followup"
   ],
   "responses": [
     {
       "resetContexts": false,
-      "action": "Name",
+      "action": "Address",
       "affectedContexts": [
         {
-          "name": "Name-followup",
+          "name": "Address1-followup",
           "parameters": {},
           "lifespan": 10
         }
       ],
       "parameters": [
         {
-          "id": "3c7f9367-ba43-48e5-bd84-13cb20575723",
+          "id": "ca6a4271-3a95-4b00-b9cd-e62068c19b7d",
           "required": true,
-          "dataType": "@sys.person",
-          "name": "Name",
-          "value": "$Name",
+          "dataType": "@sys.address",
+          "name": "Address",
+          "value": "$Address",
           "prompts": [
             {
               "lang": "en",
-              "value": "Please say the name?"
+              "value": "Please say the address?"
             }
           ],
           "promptMessages": [],
           "noMatchPromptMessages": [],
           "noInputPromptMessages": [],
           "outputDialogContexts": [],
-          "isList": false
+          "isList": true
         }
       ],
       "messages": [

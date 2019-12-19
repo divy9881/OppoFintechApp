@@ -1,34 +1,28 @@
 {
-  "id": "5e501b95-579f-4ada-8f2a-45af0130f142",
-  "parentId": "0ce144b6-9ccb-4ea8-9ee2-5cab424752f7",
+  "id": "cff4dfaa-9a0c-4aeb-93ec-f5af1d98ac6c",
+  "parentId": "cd212d91-aac8-45ec-a015-6706a020677b",
   "rootParentId": "47663512-6512-4c2f-9f6c-2370c1f85385",
-  "name": "Name",
+  "name": "Phone Number1",
   "auto": true,
   "contexts": [
-    "Key-followup"
+    "Address1-followup"
   ],
   "responses": [
     {
       "resetContexts": false,
-      "action": "Name",
-      "affectedContexts": [
-        {
-          "name": "Name-followup",
-          "parameters": {},
-          "lifespan": 10
-        }
-      ],
+      "action": "Phone_Number",
+      "affectedContexts": [],
       "parameters": [
         {
-          "id": "3c7f9367-ba43-48e5-bd84-13cb20575723",
+          "id": "00c23ace-caa4-4648-a7b7-6ef82b629187",
           "required": true,
-          "dataType": "@sys.person",
-          "name": "Name",
-          "value": "$Name",
+          "dataType": "@sys.phone-number",
+          "name": "Phone_Number",
+          "value": "$Phone_Number",
           "prompts": [
             {
               "lang": "en",
-              "value": "Please say the name?"
+              "value": "Please say the phone number?"
             }
           ],
           "promptMessages": [],

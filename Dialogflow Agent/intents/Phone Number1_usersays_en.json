@@ -1,0 +1,70 @@
+[
+  {
+    "id": "e7e5009e-61a3-4c04-9dd9-e3df7521ddcc",
+    "data": [
+      {
+        "text": "1234567890",
+        "alias": "Phone_Number",
+        "meta": "@sys.phone-number",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "ec851c5d-61bd-48c0-b69c-1e06313c15c7",
+    "data": [
+      {
+        "text": "Phone number is ",
+        "userDefined": false
+      },
+      {
+        "text": "1234567890",
+        "alias": "Phone_Number",
+        "meta": "@sys.phone-number",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "8338b91b-6b1d-45dd-b110-46dddd657618",
+    "data": [
+      {
+        "text": "Phone number is ",
+        "userDefined": false
+      },
+      {
+        "text": "9876543210",
+        "alias": "Phone_Number",
+        "meta": "@sys.phone-number",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "1f3b7190-bc03-4746-ac43-ea24b1c5ce7e",
+    "data": [
+      {
+        "text": "Phone number is ",
+        "userDefined": false
+      },
+      {
+        "text": "8169662029",
+        "alias": "Phone_Number",
+        "meta": "@sys.phone-number",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  }
+]
