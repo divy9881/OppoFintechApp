@@ -3,7 +3,3 @@ The application which incorporates virtual assistant features to fill in the for
 
 ## Application URL
 [oppofintech](https://oppofintech.herokuapp.com/)
-
-## TODO
-- Write a privacy policy
-- Form submit route
