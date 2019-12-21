@@ -3,9 +3,12 @@ async function fetchFieldsAndUpdate(key){
     fields = response.json()
     return fields
 }
-
+let set_var = undefined
 async function initiateFetchInterval(interval, key){
-    let set_var = setInterval(async function(){
+    if(set_var!=undefined){
+        clearInterval(set_var)
+    }
+    set_var = setInterval(async function(){
         let fields = await fetchFieldsAndUpdate(key)
         if(fields["Name"]){
             document.getElementById("Name").value = fields["Name"]
