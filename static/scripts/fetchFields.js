@@ -18,6 +18,12 @@ async function initiateFetchInterval(interval, key){
         }
         if(fields["Phone_Number"]){
             document.getElementById("Phone_Number").value = fields["Phone_Number"]
+        }
+        if(fields["Gender"]){
+            document.getElementById(fields["Gender"]).checked = "checked"
+        }
+        if(fields["Gender"]){
+            document.getElementById("Country").value = fields["Country"]
             clearInterval(set_var)
         }
     }, interval)
