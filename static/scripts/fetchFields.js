@@ -22,7 +22,7 @@ async function initiateFetchInterval(interval, key){
         if(fields["Gender"]){
             document.getElementById(fields["Gender"]).checked = "checked"
         }
-        if(fields["Gender"]){
+        if(fields["Country"]){
             document.getElementById("Country").value = fields["Country"]
             clearInterval(set_var)
         }
