@@ -22,6 +22,8 @@
 
 .btn-div{
     text-align:center;
+    margin-top:15px;
+    margin-bottom:100px;
 }
 
 .agent{
@@ -36,4 +38,19 @@
 
 form{
     margin-top:30px;
+}
+
+#radio-comp{
+    border-radius:5px;
+    border-color:grey;
+    border-width:1px;
+    border-style:solid;
+}
+
+.gender-radio{
+    margin:10px;
+}
+
+#country{
+    margin-top:15px;
 }

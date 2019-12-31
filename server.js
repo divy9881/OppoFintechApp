@@ -48,7 +48,24 @@ app.post("/intents", function (req, res) {
             key = webhookResponse.queryResult.outputContexts[len-2]["parameters"]["Key"]
             formInputs[key]["Phone_Number"] = webhookResponse.queryResult.parameters["Phone_Number"]
             return res.json({
-                fulfillmentText: "Okay " + formInputs[key]["Phone_Number"] + " it is, form ended, and all the inputs are recorded."
+                //fulfillmentText: "Okay " + formInputs[key]["Phone_Number"] + " it is, form ended, and all the inputs are recorded."
+                fulfillmentText: "Okay " + formInputs[key]["Phone_Number"] + " it is, Gender?"
+            })
+        case "Gender":
+            len = webhookResponse.queryResult.outputContexts.length
+            key = webhookResponse.queryResult.outputContexts[len-2]["parameters"]["Key"]
+            formInputs[key] = {}
+            formInputs[key]["Gender"] = webhookResponse.queryResult.parameters["Gender"].name
+            return res.json({
+                fulfillmentText: "Okay " + formInputs[key]["Gender"] + " it is, \n Country?"
+            })
+        case "Country":
+            len = webhookResponse.queryResult.outputContexts.length
+            key = webhookResponse.queryResult.outputContexts[len-2]["parameters"]["Key"]
+            formInputs[key] = {}
+            formInputs[key]["Country"] = webhookResponse.queryResult.parameters["Country"].name
+            return res.json({
+                fulfillmentText: "Okay " + formInputs[key]["Country"] + " it is, form ended, and all the inputs are recorded."
             })
     }
 })
