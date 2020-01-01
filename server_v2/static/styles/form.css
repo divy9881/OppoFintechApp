@@ -1,0 +1,56 @@
+*{
+    font-family: 'Montserrat', sans-serif;
+}
+
+.form-heading{
+    text-align:center;
+    font-size:2em;
+}
+
+.container-fluid{
+    margin-top:10px;
+}
+
+.GA-btn{
+    margin-top:25px;
+}
+
+.sub-btn{
+    padding-left:20px;
+    padding-right:20px;
+}
+
+.btn-div{
+    text-align:center;
+    margin-top:15px;
+    margin-bottom:100px;
+}
+
+.agent{
+    margin-top:10px;
+    margin-bottom:50px;
+    text-align:center;
+}
+
+#key-field{
+    margin-top:30px;
+}
+
+form{
+    margin-top:30px;
+}
+
+#radio-comp{
+    border-radius:5px;
+    border-color:grey;
+    border-width:1px;
+    border-style:solid;
+}
+
+.gender-radio{
+    margin:10px;
+}
+
+#Country{
+    margin-top:15px;
+}

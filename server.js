@@ -37,7 +37,7 @@ app.post("/intents", function (req, res) {
             key = webhookResponse.queryResult.outputContexts[len-2]["parameters"]["Key"]
             let address = ""
             webhookResponse.queryResult.parameters["Address"].forEach(function (place) {
-                address += place + " ,"
+                address += place + ", "
             })
             formInputs[key]["Address"] = address.slice(0, address.length - 1)
             return res.json({
