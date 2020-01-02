@@ -1,0 +1,31 @@
+{
+    "manifest_version": 2,
+    "name": "Form Filler",
+    "version": "1.0",
+    "description": "Helps you fill forms on webpages",
+    "icons": {
+        "144": "icon144.png"
+    },
+    "browser_action": {
+        "default_title": "Form Filler"
+    },
+    "background": {
+        "scripts": [
+            "background.js"
+        ],
+        "persistent": false
+    },
+    "permissions": ["activeTab"],
+    "content_scripts": [
+        {
+            "matches": [
+                "https://*/*",
+                "http://*/*"
+            ],
+            "js": [
+                "jquery-3.3.1.min.js",
+                "formFiller.js"
+            ]
+        }
+    ]
+}
