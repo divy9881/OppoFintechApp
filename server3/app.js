@@ -88,6 +88,6 @@ app.get("*", function (req, res) {
     res.send("Sorry invalid request")
 })
 
-app.listen(4444, function () {
+app.listen(process.env.PORT, function () {
     console.log("Server started")
 })
