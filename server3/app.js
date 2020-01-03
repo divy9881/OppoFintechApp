@@ -60,7 +60,7 @@ function followup(conv, key) {
     }
 }
 
-dialogflowApp.intent("Key", function (conv, params) {
+dialogApp.intent("Key", function (conv, params) {
     const key = params.Key
     const lifespan = 25;
     const contextParameters = {
@@ -70,7 +70,7 @@ dialogflowApp.intent("Key", function (conv, params) {
     followup(conv, key)
 });
 
-dialogflowApp.intent("InputEntered", function (conv, params) {
+dialogApp.intent("InputEntered", function (conv, params) {
     const value = params.Value
     const key = params.Key
     formValues[key].push(value)
