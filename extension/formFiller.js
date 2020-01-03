@@ -1,3 +1,4 @@
+let labelToElement = {};
 chrome.runtime.onMessage.addListener(function (msg, sender, sendResponse) {
     if (msg.text === 'get') {
         var textAreas = $.find("textarea");
@@ -37,7 +38,7 @@ chrome.runtime.onMessage.addListener(function (msg, sender, sendResponse) {
         // console.log("ignoredInputs", ignoredInputs)
 
 
-        var labelToElement = {};
+        labelToElement = {};
         // Label -> forElement
 
         labels.forEach(label => {
@@ -75,11 +76,16 @@ chrome.runtime.onMessage.addListener(function (msg, sender, sendResponse) {
             alert("The FormFiller key is: " + msg.key)
         }
     } else if (msg.text === 'set') {
-        let fields = msg.fields
-        let values = msg.values
-        let labelToElement = msg.labelToElement
+        let fields = msg.fields;
+        let values = msg.values;
         fields.forEach((field, index) => {
-            labelToElement[field].value = values[index]
+            try {
+                if(values[index]) {
+                    labelToElement[field].value = values[index];
+                }
+            } catch {
+
+            }
         });
     }
 });

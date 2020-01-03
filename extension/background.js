@@ -1,5 +1,6 @@
 let key = Math.round(Math.random() * 1000000);
 let timer = null;
+let tab = null;
 
 function fill(labelToElement) {
     var xhr = new XMLHttpRequest();
@@ -9,14 +10,14 @@ function fill(labelToElement) {
     xhr.onreadystatechange = function () {
         if (xhr.readyState === 4 && xhr.status === 200) {
             var json = JSON.parse(xhr.responseText);
+            chrome.tabs.sendMessage(tab.id, { text: 'set', fields: json.fields, values: json.values, labelToElement }, ()=>{})
             if (json.stop) {
-                chrome.tabs.sendMessage(tab.id, { text: 'set', fields: json.fields, values: json.values, labelToElement })
                 clearInterval(timer);
             }
         }
     };
     // var data = JSON.stringify({ key, structure: Object.keys(labelToElement) });
-    // xhr.send(data);
+    xhr.send("");
 }
 
 function fillTheForm(labelToElement) {
@@ -29,7 +30,7 @@ function fillTheForm(labelToElement) {
             if (xhr.readyState === 4 && xhr.status === 200) {
                 timer = setInterval(() => {
                     fill(labelToElement)
-                }, 2000);
+                }, 5000);
             }
         };
         var data = JSON.stringify({ key, fields: Object.keys(labelToElement) });
@@ -37,6 +38,7 @@ function fillTheForm(labelToElement) {
     }
 }
 
-chrome.browserAction.onClicked.addListener(function (tab) {
+chrome.browserAction.onClicked.addListener(function (t) {
+    tab = t
     chrome.tabs.sendMessage(tab.id, { text: 'get', key }, fillTheForm);
 });

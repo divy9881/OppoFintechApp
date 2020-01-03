@@ -15,11 +15,14 @@ app.use(bodyParser.json())
 app.use(express.static(__dirname + "/static"))
 
 app.get("/", function (req, res) {
-    res.sendFile(__dirname + "/static/views/form.html")
+    res.sendFile(__dirname + "/form.html");
+    // res.sendFile(__dirname + "/form.html")
+    // res.sendFile(__dirname + "/static/views/form.html")
 })
 
 app.get("/test", function (_req, res) {
-    res.sendFile(__dirname + "/test.html")
+    res.sendFile(__dirname + "/test.html");
+    // res.sendFile(__dirname + "/test.html")
 })
 
 let formFields = {}
@@ -35,17 +38,12 @@ app.post("/pushfields", cors(), function (req, res) {
 app.post("/getInput/:key", cors(), function (req, res) {
     const key = req.params.key
     if (key) {
-        if(formFields[key].length === formValues[key].length) {
-            res.json({
-                stop: true,
-                fields: formFields[key],
-                values: formValues[key]
-            });
-        } else {
-            res.json({
-                stop: false
-            })
-        }
+        let stop = formFields[key].length === formValues[key].length
+        res.json({
+            stop,
+            fields: formFields[key],
+            values: formValues[key]
+        });
     } else {
         req.json({ stop: true, result: [] })
     }
@@ -53,7 +51,7 @@ app.post("/getInput/:key", cors(), function (req, res) {
 
 function followup(conv, key) {
     let index = formValues[key].length
-    if(index === formFields[key].length) {
+    if (index === formFields[key].length) {
         conv.followup("EVENT_END")
     } else {
         conv.followup("EVENT_INPUT", { Field: formFields[key][index] })
@@ -72,7 +70,7 @@ dialogApp.intent("Key", function (conv, params) {
 
 dialogApp.intent("InputEntered", function (conv, params) {
     const value = params.Value
-    const key = params.Key
+    const key = conv.contexts.input['key-followup'].parameters.key
     formValues[key].push(value)
     const lifespan = 25;
     const contextParameters = {
