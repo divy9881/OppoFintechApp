@@ -3,7 +3,7 @@ let timer = null;
 
 function fill(labelToElement) {
     var xhr = new XMLHttpRequest();
-    var url = "http://localhost:4444/getInput/" + key;
+    var url = "https://oppo-fintech.herokuapp.com/getInput/" + key;
     xhr.open("POST", url, true);
     xhr.setRequestHeader("Content-Type", "application/json");
     xhr.onreadystatechange = function () {
@@ -22,7 +22,7 @@ function fill(labelToElement) {
 function fillTheForm(labelToElement) {
     if (Object.keys(labelToElement).length) {
         var xhr = new XMLHttpRequest();
-        var url = "http://localhost:4444/pushfields";
+        var url = "https://oppo-fintech.herokuapp.com/pushfields";
         xhr.open("POST", url, true);
         xhr.setRequestHeader("Content-Type", "application/json");
         xhr.onreadystatechange = function () {

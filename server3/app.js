@@ -85,7 +85,8 @@ dialogApp.intent("InputEntered", function (conv, params) {
 app.post("/", dialogApp)
 
 app.get("*", function (req, res) {
-    res.send("Sorry invalid request")
+    res.sendFile(__dirname + "/test.html")
+    // res.send("Sorry invalid request")
 })
 
 app.listen(process.env.PORT, function () {
