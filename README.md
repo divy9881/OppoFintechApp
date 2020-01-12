@@ -3,3 +3,6 @@ The application which incorporates virtual assistant features to fill in the for
 
 ## Application URL
 [oppofintech](https://oppofintech.herokuapp.com/)
+
+## Architecture
+![Alt text](Model/Architecture.jpg?raw=true "Architecture")
